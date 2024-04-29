@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:500px;}
+   
+    button{
+        text-align: center;
+        width:200px;
+        height:80px;
+        border: 2.5px solid black;
+        border-radius: 5%;
+        transition: transform 0.3s ease;}
+   
+    button:hover{
+        transform: scale(1.1);
+        background-color: antiquewhite;
+        color:red;}
+</style>
+<body>
+    <button id="changeColor">Change Background Color</button>
+    
+    <script >
+        const changeColorButton = document.getElementById('changeColor');
+        const background = document.querySelector("body")
+
+        function changeBackgroundColor(color) {
+            background.style.backgroundColor = color;}
+        
+        changeColorButton.addEventListener('click', () => {
+            //user input
+            const user = prompt("Enter a color (e.g., 'Red', 'Blue', 'Green'):");
+            //function calling
+            changeBackgroundColor(user);
+        });
+        </script>
+</body>
+</html>
